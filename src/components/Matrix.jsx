@@ -25,10 +25,7 @@ const Task = ({ name }) => {
     });
 
 
-// Save to local storage
-const handleSave = () => {
-    localStorage.setItem('items', JSON.stringify(items));
-};
+
 
 
     return (
@@ -99,6 +96,10 @@ const Matrix = () => {
         setItems(nousItems);
     };
 
+    // Save to local storage
+    const handleSave = () => {
+        localStorage.setItem('items', JSON.stringify(items));
+    };
 
     return (
         <DndProvider backend={HTML5Backend}>
