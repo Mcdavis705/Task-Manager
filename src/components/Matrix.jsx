@@ -60,9 +60,9 @@ const Box = ({ children, title, mouItem }) => {
                 `${title === "DO" ? "bg-green-500" : title==="DECIDE" ? "bg-purple-500" : title==="DELEGATE" ? "bg-red-500" : title==="DELETE" ? "bg-gray-500":""} 
                 p-8 min-h-[400px] border 
                 ${isOver ? 'bg-blue-500' : ''}`
-            }
+            }x
         >
-            <h2 className="text-xl text-center mb-4">{title}</h2>
+            <h1 className="text-3xl text-white font-bold text-center mb-4 tracking-tight">{title}</h1>
             {children}
         </div>
     );
@@ -117,7 +117,7 @@ const Matrix = () => {
 
     return (
         <DndProvider backend={HTML5Backend}>
-            <h1 className="text-3xl font-bold text-gray-800 mb-4">
+            <h1 className="text-4xl text-center font-bold text-gray-800 mb-4">
                 Eisenhower's Decision Matrix
             </h1>
 
