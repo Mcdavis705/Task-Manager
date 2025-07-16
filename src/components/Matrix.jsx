@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect,useState } from 'react';
 import { DndProvider, useDrag, useDrop } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { RotateCcw, Minus, Plus, Save } from 'lucide-react';
@@ -100,6 +100,16 @@ const Matrix = () => {
     const handleSave = () => {
         localStorage.setItem('items', JSON.stringify(items));
     };
+
+    // Load/load tasks from local storage
+    useEffect(() => {
+        const storedItems = localStorage.getItem('items');
+        if (storedItems) {
+            setItems(JSON.parse(storedItems));
+        }
+    }, []);
+
+
 
     return (
         <DndProvider backend={HTML5Backend}>
