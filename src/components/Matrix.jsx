@@ -31,10 +31,11 @@ const Task = ({ name }) => {
     return (
         <div
             ref={drag}
-            className={`border p-4 bg-white rounded-lg shadow-sm mb-4 transition-opacity duration-150 ${isDragging ? 'opacity-50' : ''
+            className={`border p-2 bg-transparent rounded-lg shadow-sm mb-4 transition-opacity duration-150 ${isDragging ? 'opacity-50' : ''
                 }`}
         >
-            {name}
+            <h2 className="text-lg text-gray-800 tracking-tight">{name}</h2>
+
         </div>
     );
 };
