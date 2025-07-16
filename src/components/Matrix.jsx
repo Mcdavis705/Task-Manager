@@ -128,7 +128,7 @@ const Matrix = () => {
 
             <button
                 onClick={handleOpenModal}
-                className="flex items-center gap-2 p-2 m-2 bg-none border border-blue-500 hover:bg-blue-700 hover:text-white text-sm font-medium rounded-xl shadow-md transition-colors duration-200"
+                className="flex items-center gap-2 p-2 m-2 bg-none border border-blue-500 hover:bg-blue-700 hover:text-white text-sm  font-medium rounded-l shadow-xl transition-colors duration-200"
             >
                 <Plus className="w-4 h-4" />
                 Add Task
@@ -167,7 +167,7 @@ const Matrix = () => {
                 {/* Button to delete tasks in the "DELETE" box */}
                 <button
                     onClick={deleteTasksInDeleteBox}
-                    className="flex items-center gap-2 p-2 m-2 bg-red-500 border border-white-500 hover:bg-red-800 text-white text-sm font-medium rounded-xl shadow-md transition-colors duration-200"
+                    className="text:sm sm:lg flex items-center gap-2 p-2 m-2 bg-red-500 border border-white-500 hover:bg-red-800 text-white text-sm font-medium rounded-xl shadow-md transition-colors duration-200"
                 >
                     <Minus className="w-4 h-4" />
                     Clear tasks
