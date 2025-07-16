@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { DndProvider, useDrag, useDrop } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
-import { Heading1, Minus, Plus } from 'lucide-react';
+import { Heading1, Minus, Plus, Save } from 'lucide-react';
 import './Test.css';
 
 const ItemType = 'TASK';
@@ -23,6 +23,13 @@ const Task = ({ name }) => {
             isDragging: !!monitor.isDragging(),
         }),
     });
+
+
+// Save to local storage
+const handleSave = () => {
+    localStorage.setItem('items', JSON.stringify(items));
+};
+
 
     return (
         <div
@@ -96,7 +103,7 @@ const Matrix = () => {
     return (
         <DndProvider backend={HTML5Backend}>
             <h1 className="text-3xl font-bold text-gray-800 mb-4">
-                Eisenhower's Matrix
+                Eisenhower's Decision Matrix
             </h1>
 
             <button
@@ -118,15 +125,26 @@ const Matrix = () => {
             </div>
 
 
-            {/* Button to delete tasks in the "DELETE" box */}
-            <div className="flex justify-end">
+            <div className="flex justify-space-between ">
+                {/* add buttons to save to the local storage */}
+                <button
+                    className="flex items-center gap-2 p-2 m-2 bg-none border border-blue-500 hover:bg-blue-700 hover:text-white text-sm font-medium rounded-xl shadow-md transition-colors duration-200"
+                    onClick={handleSave}
+                >
+                    <Save className="w-4 h-4" />
+                    Save
+                </button>
+
+                {/* Button to delete tasks in the "DELETE" box */}
                 <button
                     onClick={deleteTasksInDeleteBox}
                     className="flex items-center gap-2 p-2 m-2 bg-red-500 border border-white-500 hover:bg-red-800 text-white text-sm font-medium rounded-xl shadow-md transition-colors duration-200"
                 >
                     <Minus className="w-4 h-4" />
-                    Delete tasks
+                    Clear tasks
                 </button>
+
+
             </div>
 
 
