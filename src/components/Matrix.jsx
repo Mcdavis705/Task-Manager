@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { DndProvider, useDrag, useDrop } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
-import { Heading1, Minus, Plus, Save } from 'lucide-react';
+import { RotateCcw, Minus, Plus, Save } from 'lucide-react';
 import './Test.css';
 
 const ItemType = 'TASK';
@@ -135,6 +135,15 @@ const Matrix = () => {
                     <Save className="w-4 h-4" />
                     Save
                 </button>
+
+                {/* Load tasks from local storage in case of am page refresh */}
+                <button
+                    className="flex items-center gap-2 p-2 m-2 bg-transparent text-green-600 border border-green-500 hover:bg-green-600 hover:text-white text-sm font-medium rounded-xl shadow-md transition-colors duration-200"
+                >
+                    <RotateCcw className="w-4 h-4" />
+                    Recover tasks
+                </button>
+
 
                 {/* Button to delete tasks in the "DELETE" box */}
                 <button
