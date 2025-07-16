@@ -34,7 +34,7 @@ const Task = ({ name }) => {
             className={`border p-2 bg-transparent rounded-lg shadow-sm mb-4 transition-opacity duration-150 ${isDragging ? 'opacity-50' : ''
                 }`}
         >
-            <h2 className="text-lg text-gray-800 tracking-tight">{name}</h2>
+            <h2 className="text-lg text-white tracking-tight">{name}</h2>
 
         </div>
     );
@@ -58,7 +58,7 @@ const Box = ({ children, title, mouItem }) => {
             ref={drop}
             className={
                 `${title === "DO" ? "bg-green-500" : title==="DECIDE" ? "bg-purple-500" : title==="DELEGATE" ? "bg-red-500" : title==="DELETE" ? "bg-gray-500":""} 
-                p-8 min-h-[400px] border 
+                p-8 min-h-[400px] border rounded
                 ${isOver ? 'bg-blue-500' : ''}`
             }x
         >
