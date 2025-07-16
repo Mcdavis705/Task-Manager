@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { DndProvider, useDrag, useDrop } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { RotateCcw, Minus, Plus, Save } from 'lucide-react';
@@ -34,7 +34,9 @@ const Task = ({ name }) => {
             className={`border p-2 bg-transparent rounded-lg shadow-sm mb-4 transition-opacity duration-150 ${isDragging ? 'opacity-50' : ''
                 }`}
         >
-            <h2 className="text-lg text-white tracking-tight">{name}</h2>
+            <h2 className="text-sm sm:text-lg text-white tracking-tight">
+                {name}
+            </h2>
 
         </div>
     );
@@ -57,12 +59,15 @@ const Box = ({ children, title, mouItem }) => {
         <div
             ref={drop}
             className={
-                `${title === "DO" ? "bg-green-500" : title==="DECIDE" ? "bg-purple-500" : title==="DELEGATE" ? "bg-red-500" : title==="DELETE" ? "bg-gray-500":""} 
-                p-8 min-h-[400px] border rounded
+
+                `${title === "DO" ? "bg-green-500" : title === "DECIDE" ? "bg-purple-500" : title === "DELEGATE" ? "bg-red-500" : title === "DELETE" ? "bg-gray-500" : ""} 
+                p-4 sm:p-6 lg:p-8
+                min-h-[300px] sm:min-h-[350px] lg:min-h-[400px]
+
                 ${isOver ? 'bg-blue-500' : ''}`
-            }x
+            } x
         >
-            <h1 className="text-3xl text-white font-bold text-center mb-4 tracking-tight">{title}</h1>
+            <h1 className="text-xl sm:text-2xl lg:text-3xl text-white font-bold text-center mb-4 tracking-tight">{title}</h1>
             {children}
         </div>
     );
