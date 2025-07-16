@@ -55,8 +55,11 @@ const Box = ({ children, title, mouItem }) => {
     return (
         <div
             ref={drop}
-            className={`bg-slate-100 p-8 min-h-[400px] border ${isOver ? 'bg-blue-500' : ''
-                }`}
+            className={
+                `${title === "DO" ? "bg-green-500" : title==="DECIDE" ? "bg-purple-500" : title==="DELEGATE" ? "bg-red-500" : title==="DELETE" ? "bg-gray-500":""} 
+                p-8 min-h-[400px] border 
+                ${isOver ? 'bg-blue-500' : ''}`
+            }
         >
             <h2 className="text-xl text-center mb-4">{title}</h2>
             {children}
