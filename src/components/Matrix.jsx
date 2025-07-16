@@ -34,7 +34,7 @@ const Task = ({ name }) => {
             className={`border p-2 bg-transparent rounded-lg shadow-sm mb-4 transition-opacity duration-150 ${isDragging ? 'opacity-50' : ''
                 }`}
         >
-            <h2 className="text-sm sm:text-lg text-white tracking-tight">
+            <h2 className="font-poppins text-sm sm:text-lg text-white tracking-tight">
                 {name}
             </h2>
 
@@ -67,7 +67,7 @@ const Box = ({ children, title, mouItem }) => {
                 ${isOver ? 'bg-blue-500' : ''}`
             } x
         >
-            <h1 className="text-xl sm:text-2xl lg:text-3xl text-white font-bold text-center mb-4 tracking-tight">{title}</h1>
+            <h1 className="font-poppins text-xl sm:text-2xl lg:text-3xl text-white font-bold text-center mb-4 tracking-tight">{title}</h1>
             {children}
         </div>
     );
@@ -122,13 +122,13 @@ const Matrix = () => {
 
     return (
         <DndProvider backend={HTML5Backend}>
-            <h1 className="text-4xl text-center font-bold text-gray-800 mb-4">
+            <h1 className="font-poppins text-4xl text-center font-bold text-gray-800 mb-4">
                 Eisenhower's Decision Matrix
             </h1>
 
             <button
                 onClick={handleOpenModal}
-                className="flex items-center gap-2 p-2 m-2 bg-none border border-blue-500 hover:bg-blue-700 hover:text-white text-sm  font-medium rounded-l shadow-xl transition-colors duration-200"
+                className="font-poppins flex items-center gap-2 p-2 m-2 bg-none border border-blue-500 hover:bg-blue-700 hover:text-white text-sm  font-medium rounded-l shadow-xl transition-colors duration-200"
             >
                 <Plus className="w-4 h-4" />
                 Add Task
@@ -148,7 +148,7 @@ const Matrix = () => {
             <div className="flex justify-space-between ">
                 {/* add buttons to save to the local storage */}
                 <button
-                    className="flex items-center gap-2 p-2 m-2 bg-none border border-blue-500 hover:bg-blue-700 hover:text-white text-sm font-medium rounded-xl shadow-md transition-colors duration-200"
+                    className="font-poppins flex items-center gap-2 p-2 m-2 bg-none border border-blue-500 hover:bg-blue-700 hover:text-white text-sm font-medium rounded-xl shadow-md transition-colors duration-200"
                     onClick={handleSave}
                 >
                     <Save className="w-4 h-4" />
@@ -157,7 +157,7 @@ const Matrix = () => {
 
                 {/* Load tasks from local storage in case of am page refresh */}
                 <button
-                    className="flex items-center gap-2 p-2 m-2 bg-transparent text-green-600 border border-green-500 hover:bg-green-600 hover:text-white text-sm font-medium rounded-xl shadow-md transition-colors duration-200"
+                    className="font-poppins flex items-center gap-2 p-2 m-2 bg-transparent text-green-600 border border-green-500 hover:bg-green-600 hover:text-white text-sm font-medium rounded-xl shadow-md transition-colors duration-200"
                 >
                     <RotateCcw className="w-4 h-4" />
                     Recover tasks
@@ -167,7 +167,7 @@ const Matrix = () => {
                 {/* Button to delete tasks in the "DELETE" box */}
                 <button
                     onClick={deleteTasksInDeleteBox}
-                    className="text:sm sm:lg flex items-center gap-2 p-2 m-2 bg-red-500 border border-white-500 hover:bg-red-800 text-white text-sm font-medium rounded-xl shadow-md transition-colors duration-200"
+                    className="font-poppins text:sm sm:lg flex items-center gap-2 p-2 m-2 bg-red-500 border border-white-500 hover:bg-red-800 text-white text-sm font-medium rounded-xl shadow-md transition-colors duration-200"
                 >
                     <Minus className="w-4 h-4" />
                     Clear tasks

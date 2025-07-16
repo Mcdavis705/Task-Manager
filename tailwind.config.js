@@ -5,11 +5,13 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
+        playfair: ['Playfair Display', 'serif'], // ✅ use a key without spaces
+      },
+    },
   },
   plugins: [],
-  fontFamily: {
-    poppins: ['Poppins', 'sans-serif'],
-  },
 }
-
